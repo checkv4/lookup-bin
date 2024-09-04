@@ -2,7 +2,7 @@ import fs from "fs"
 import path from "path"
 
 // 指定文件夹路径
-const binPath = path.join(__dirname, '../bins.csv');
+const binPath = path.join(import.meta.dirname, '../bins.csv');
 export interface BinInfo {
     bin: string;
     card_brand: string;
