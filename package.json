@@ -1,0 +1,35 @@
+{
+  "name": "sbin",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "homepage": "https://github.com/checkv4/lookup-bin",
+  "author": {
+    "name": "tocha688",
+    "url": "https://github.com/tocha688"
+  },
+  "scripts": {
+    "dev": "tsup --watch",
+    "build": "tsup",
+    "format": "prettier --write '**/*.{js,ts,jsx,tsx,json,yml,yaml,md,html}' --ignore-path .gitignore",
+    "lint": "eslint ."
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    }
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^20.12.7",
+    "tsup": "^8.0.2",
+    "typescript": "^5.4.5"
+  },
+  "files": [
+    "dist/*",
+    "bins.csv"
+  ]
+}
