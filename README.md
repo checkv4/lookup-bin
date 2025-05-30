@@ -1,15 +1,15 @@
 Bin information used to find a bank card
 ### Install
 ```
-yarn add sbin
+yarn add sobin
 //or
-npm install sbin
+npm install sobin
 ```
 ### Use
 ```
-const lookupBin=require("./index")
+const sobin=require("./index")
 //use local db
-console.log(sbin.FindBin("440393"))
+console.log(sobin.FindBin("440393"))
 //
 {
   bin: '440393',

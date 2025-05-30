@@ -1,6 +1,6 @@
 {
   "name": "sobin",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
@@ -9,6 +9,11 @@
     "name": "tocha688",
     "url": "https://github.com/tocha688"
   },
+  "keywords": [
+    "lookup",
+    "bin",
+    "lookup-bin"
+  ],
   "scripts": {
     "dev": "tsup --watch",
     "build": "tsup",

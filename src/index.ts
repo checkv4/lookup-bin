@@ -2,6 +2,11 @@ import fs from "fs"
 import path from "path"
 
 // 指定文件夹路径
+// @ts-ignore
+if (!import.meta?.dirname) {
+    //@ts-ignore
+    import.meta.dirname = __dirname
+}
 const binPath = path.join(import.meta.dirname, '../bins.csv');
 export interface BinInfo {
     bin: string;
@@ -22,7 +27,7 @@ function LoadBins() {
         throw new Error("The bins.csv file does not exist.")
     }
     // if (bins) return bins;
-    const objs:{[key:string]:BinInfo} = {};
+    const objs: { [key: string]: BinInfo } = {};
     fs.readFileSync(binPath).toString("utf8").split("\n").forEach(x => {
         const arr = x.trim().split(",").map(x => decodeURIComponent(x.trim()));
         const bin = {
@@ -42,14 +47,14 @@ function LoadBins() {
     })
     return objs;
 }
-export const bins:{[key:string]:BinInfo} = (global as any).lookupBins = (global as any).lookupBins || LoadBins();
+export const bins: { [key: string]: BinInfo } = (global as any).lookupBins = (global as any).lookupBins || LoadBins();
 
 
-export function ToBin(card:string):string {
+export function ToBin(card: string): string {
     return (card + "").substring(0, 6)
 }
 
-export function FindBin(bin:string):BinInfo {
+export function FindBin(bin: string): BinInfo {
     bin = ToBin(bin);
     if (!bins) {
         LoadBins()
